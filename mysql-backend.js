@@ -242,6 +242,7 @@ StatdMySQLBackend.prototype.checkIfTablesExists = function(type_index, tables_na
   self.sqlConnection.query('show tables like "'+tables_names[startIndex]+'";', function(err, results, fields) {
     if(err) {
       callback(err);
+      return;
     }
 
     // If table wasn't found
